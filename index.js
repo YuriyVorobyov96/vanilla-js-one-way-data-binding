@@ -1,11 +1,11 @@
-createdBindedVariable("counter");
+createBindedVariable("counter");
 counter = 0;
 
 function updateCounter(val) {
   counter += val;
 }
 
-function createdBindedVariable(targetId) {
+function createBindedVariable(targetId) {
   let newVal = null;
 
   Object.defineProperty(window, targetId, {
@@ -18,5 +18,5 @@ function createdBindedVariable(targetId) {
     get: () => {
       return newVal;
     }
-  })
+  });
 }
